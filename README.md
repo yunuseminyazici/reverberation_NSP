@@ -1,5 +1,18 @@
 # 1. Reverberation - NSP project
 
+<!-- TOC -->
+
+- [1. Reverberation - NSP project](#1-reverberation---nsp-project)
+  - [1.1. Specification](#11-specification)
+    - [1.1.1. General Specification](#111-general-specification)
+  - [1.2. Principle and Matlab Simulation](#12-principle-and-matlab-simulation)
+    - [1.2.1. Basic principles and MATLAB simulation](#121-basic-principles-and-matlab-simulation)
+    - [1.2.2. Simulation with Sinmulink](#122-simulation-with-sinmulink)
+  - [Design Idea](#design-idea)
+    - [The sequence of Signal Flow](#the-sequence-of-signal-flow)
+
+<!-- /TOC -->
+
 ## 1.1. Specification
 
 ### 1.1.1. General Specification
@@ -13,7 +26,9 @@
 3. Algorithm:
 ![20220115162228](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115162228.png)
 
-## Principle and Matlab Simulation
+## 1.2. Principle and Matlab Simulation
+
+### 1.2.1. Basic principles and MATLAB simulation
 
 For the reverberation system, the system function is $$H=\frac{Y}{X}=\frac{1}{1-\alpha Z^{-N}}.$$
 
@@ -60,3 +75,38 @@ The system responses with different delay factors and gains are shown below with
 | $\alpha=-1$   |       |       |       |       |
 | $\alpha=1.2$  |       |       |       |       |
 | $\alpha=-1.2$ |       |       |       |       |
+
+**System response**
+
+| Gain\Delay    | $N=1$ | $N=2$ | $N=3$ | $N=4$ |
+|---------------|-------|-------|-------|-------|
+| $\alpha=0.7$  |       |       |       |       |
+| $\alpha=-0.7$ |       |       |       |       |
+| $\alpha=1$    |       |       |       |       |
+| $\alpha=-1$   |       |       |       |       |
+| $\alpha=1.2$  |       |       |       |       |
+| $\alpha=-1.2$ |       |       |       |       |
+
+### 1.2.2. Simulation with Sinmulink
+
+The Simulink simulation of the reverberation system is shown below
+
+![20220115190212](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115190212.png)
+
+For the component *Discrete Impulse*, the sample time is set to be $1/48000$.
+
+The output waveform of the oscilloscope is shown below
+
+![20220115190834](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115190834.png)
+
+## Design Idea
+
+### The sequence of Signal Flow
+
+From the system diagram in section 1.2.2, the sequence of signal flow is designed to be:
+
+    1. Read in the input signal and store the value into *input_x*
+    2. Calculate the value of *output_y*, output_y=input_x+gainedDelayedOutput
+    3. Output the value of *output_y*
+    4. Do delay operation and get the value of *delayedOutput*
+    5. Multiply the value of *delayedOutput* by $\alpha$ to get the value of *gainedDelayedOutput*
