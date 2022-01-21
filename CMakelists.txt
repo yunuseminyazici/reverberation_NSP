@@ -1,0 +1,111 @@
+cmake_minimum_required(VERSION 3.15.3)
+
+# Path to toolchain file. This one has to be before 'project()' below
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/arm-none-eabi-gcc.cmake)
+
+# Setup project, output and linker file
+project(Template4NSP)           #Change your project name
+
+set(EXECUTABLE ${PROJECT_NAME}.elf)
+
+enable_language(C ASM)
+#set(CMAKE_C_STANDARD 99)
+#set(CMAKE_C_STANDARD_REQUIRED ON)
+#set(CMAKE_C_EXTENSIONS -std=gnu11)
+
+
+# List of source files
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/src/ dir_src)
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/system/cmsis/ dir_cmsis)
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/system/platform/ dir_platform)
+AUX_SOURCE_DIRECTORY(${CMAKE_SOURCE_DIR}/system/S6E2CCA/PDL/ dir_pdl)
+
+set(SRC_FILES 
+        ${dir_src}
+        ${dir_cmsis}
+        ${dir_platform}
+        ${dir_pdl}
+        ${dir_startup}
+        ${CMAKE_SOURCE_DIR}/system/S6E2CCA/startup/startup_s6e2cc.S
+)
+
+# Build the executable based on the source files
+add_executable(${EXECUTABLE} ${SRC_FILES})
+
+# List of include directories
+
+target_include_directories(${EXECUTABLE} PRIVATE
+       src
+       system/cmsis
+       system/platform
+       system/S6E2CCA/PDL
+       system/S6E2CCA/startup
+)
+
+# List of external static library       
+target_link_libraries(${EXECUTABLE} ${CMAKE_SOURCE_DIR}/libs/libarm_cortexM4lf_math.a)
+
+set(LINKER_FILE ${CMAKE_SOURCE_DIR}/ldscripts/s6e2cca_ram.ld)            #The other linker file s6e2cca_rom.ld remain unused
+
+# List of compiler defines, prefix with -D compiler option
+target_compile_definitions(${EXECUTABLE} PRIVATE
+        -DDEBUG
+        -DTRACE
+        -D__FPU_PRESENT
+        -DARM_MATH_CM4
+        )
+
+# Compiler options
+target_compile_options(${EXECUTABLE} PRIVATE
+        -mcpu=cortex-m4 
+        -mthumb 
+        -mthumb-interwork 
+        -mfloat-abi=hard 
+        -mfpu=fpv4-sp-d16 
+        -munaligned-access 
+        -O0 
+        -fmessage-length=0 
+        -fsigned-char 
+        -ffunction-sections 
+        -fdata-sections 
+        -ffreestanding 
+        -fno-move-loop-invariants  
+        -g3 
+        -DDEBUG 
+        -DTRACE 
+        -D__FPU_PRESENT 
+        -DARM_MATH_CM4 
+        -std=gnu11 
+        -Wmissing-prototypes 
+        -Wstrict-prototypes 
+        -Wbad-function-cast 
+        -MMD 
+        -MP 
+        -c 
+        )
+
+# Linker options
+target_link_options(${EXECUTABLE} PRIVATE
+        -mcpu=cortex-m4 
+        -mthumb 
+        -mthumb-interwork 
+        -mfloat-abi=hard 
+        -mfpu=fpv4-sp-d16 
+        -munaligned-access 
+        -O0 
+        -fmessage-length=0 
+        -fsigned-char 
+        -ffunction-sections 
+        -fdata-sections 
+        -ffreestanding 
+        -fno-move-loop-invariants  
+        -g3 
+        -T${LINKER_FILE} 
+        -nostartfiles 
+        -Xlinker --gc-sections 
+        -L"libs" 
+        -Wl,-Map,${PROJECT_NAME}.map
+        -lm 
+        -specs=rdimon.specs 
+        -o ${PROJECT_NAME}.elf  
+        )

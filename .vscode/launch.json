@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/Template4NSP.elf",   // You need to * Change the name of the .elf file *
+            "name": "Debug Microcontroller",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "serverpath": "D:/Programs/SEGGER/JLink/JLinkGDBServerCL.exe",   // You need to * Change the Path and file name of J-Link GDB Server executable. *
+            "armToolchainPath": "D:/Programs/gcc-arm-none-eabi-10.3-2021.10/bin",    // You need to * Change the path to the arm-none-eabi-gdb executable. *
+            "device": "S6E2CCAJ0A",   // Change the device ID used for J-link, if its for NSP project and the professor doesnt change the device, it remains the same
+            "interface": "jtag",
+            "serialNumber": "", // add J-Link serial number if having multiple attached the same time.
+            "runToMain": true,
+            //"svdFile": "${workspaceRoot}/device/MK22F51212.svd",  //Optional, this is a CMSIS-SVD file for register detail debugging.
+
+        }
+    ]
+}
