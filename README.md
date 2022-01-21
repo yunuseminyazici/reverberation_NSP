@@ -42,15 +42,15 @@ The MATLAB command **filt** can be used to generate a discrete-time transfer fun
 
 The MATLAB command **zplane** provides the z-plane plot for discrete-time systems.
 
-![20220115172128](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115172128.png)
+![20220121103723](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220121103723.png)
 
 The MATLAB command **freqz** returns the system responses of both magnitude and phase.
 
-![20220115172654](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115172654.png)
+![20220121103817](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220121103817.png)
 
 The MATLAB command **impz** gives out the impulse response of the transfer function.
 
-![20220115172807](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115172807.png)
+![20220121103853](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220121103853.png)
 
 The system responses with different delay factors and gains are shown below with a table
 
@@ -58,34 +58,34 @@ The system responses with different delay factors and gains are shown below with
 
 | Gain\Delay    | $N=1$ | $N=2$ | $N=3$ | $N=4$ |
 |---------------|-------|-------|-------|-------|
-| $\alpha=0.7$  |![20220115174802](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115174802.png)|![20220115180041](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115180041.png)|       |       |
-| $\alpha=-0.7$ |       |       |       |       |
-| $\alpha=1$    |![20220115175205](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115175205.png)|       |       |       |
-| $\alpha=-1$   |       |       |       |       |
-| $\alpha=1.2$  |![20220115175344](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115175344.png)|       |       |       |
-| $\alpha=-1.2$ |![20220115175514](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/20220115175514.png)|       |       |       |
+| $\alpha=0.7$  |![zpl_n1a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n1a%2B0_7.bmp)|![zpl_n2a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a%2B0_7.bmp)|![zpl_n3a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a%2B0_7.bmp)|![zpl_n4a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a%2B0_7.bmp)|
+| $\alpha=-0.7$ |![zpl_n1a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n1a-0_7.bmp)|![zpl_n2a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a-0_7.bmp)|![zpl_n3a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a-0_7.bmp)|![zpl_n4a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a-0_7.bmp)|
+| $\alpha=1$    |![zpl_n1a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n1a%2B1.bmp)|![zpl_n2a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a%2B1.bmp)|![zpl_n3a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a%2B1.bmp)|![zpl_n4a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a%2B1.bmp)|
+| $\alpha=-1$   |![zpl_n1a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n1a-1.bmp)|![zpl_n2a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a-1.bmp)|![zpl_n3a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a-1.bmp)|![zpl_n4a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a-1.bmp)|
+| $\alpha=1.2$  |![       ](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/%20%20%20%20%20%20%20.bmp)|![zpl_n2a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a%2B1.2.bmp)|![zpl_n3a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a%2B1.2.bmp)|![zpl_n4a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a%2B1.2.bmp)|
+| $\alpha=-1.2$ |![zpl_n1a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n1a-1.2.bmp)|![zpl_n2a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n2a-1.2.bmp)|![zpl_n3a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n3a-1.2.bmp)|![zpl_n4a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/zpl_n4a-1.2.bmp)|
 
 **Impulse response**
 
 | Gain\Delay    | $N=1$ | $N=2$ | $N=3$ | $N=4$ |
 |---------------|-------|-------|-------|-------|
-| $\alpha=0.7$  |       |       |       |       |
-| $\alpha=-0.7$ |       |       |       |       |
-| $\alpha=1$    |       |       |       |       |
-| $\alpha=-1$   |       |       |       |       |
-| $\alpha=1.2$  |       |       |       |       |
-| $\alpha=-1.2$ |       |       |       |       |
+| $\alpha=0.7$  |![impz_n1a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a%2B0_7.bmp)|![impz_n2a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a%2B0_7.bmp)|![impz_n3a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a%2B0_7.bmp)|![impz_n4a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a%2B0_7.bmp)|
+| $\alpha=-0.7$ |![impz_n1a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a-0_7.bmp)|![impz_n2a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a-0_7.bmp)|![impz_n3a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a-0_7.bmp)|![impz_n4a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a-0_7.bmp)|
+| $\alpha=1$    |![impz_n1a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a%2B1.bmp)|![impz_n2a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a%2B1.bmp)|![impz_n3a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a%2B1.bmp)|![impz_n4a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a%2B1.bmp)|
+| $\alpha=-1$   |![impz_n1a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a-1.bmp)|![impz_n2a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a-1.bmp)|![impz_n3a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a-1.bmp)|![impz_n4a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a-1.bmp)|
+| $\alpha=1.2$  |![impz_n1a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a%2B1.2.bmp)|![impz_n2a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a%2B1.2.bmp)|![impz_n3a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a%2B1.2.bmp)|![impz_n4a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a%2B1.2.bmp)|
+| $\alpha=-1.2$ |![impz_n1a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n1a-1.2.bmp)|![impz_n2a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n2a-1.2.bmp)|![impz_n3a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n3a-1.2.bmp)|![impz_n4a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/impz_n4a-1.2.bmp)|
 
-**System response**
+**Frequency response**
 
 | Gain\Delay    | $N=1$ | $N=2$ | $N=3$ | $N=4$ |
 |---------------|-------|-------|-------|-------|
-| $\alpha=0.7$  |       |       |       |       |
-| $\alpha=-0.7$ |       |       |       |       |
-| $\alpha=1$    |       |       |       |       |
-| $\alpha=-1$   |       |       |       |       |
-| $\alpha=1.2$  |       |       |       |       |
-| $\alpha=-1.2$ |       |       |       |       |
+| $\alpha=0.7$  |![frq_n1a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a%2B0_7.bmp)|![frq_n2a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a%2B0_7.bmp)|![frq_n3a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a%2B0_7.bmp)|![frq_n4a+0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a%2B0_7.bmp)|
+| $\alpha=-0.7$ |![frq_n1a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a-0_7.bmp)|![frq_n2a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a-0_7.bmp)|![frq_n3a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a-0_7.bmp)|![frq_n4a-0_7](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a-0_7.bmp)|
+| $\alpha=1$    |![frq_n1a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a%2B1.bmp)|![frq_n2a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a%2B1.bmp)|![frq_n3a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a%2B1.bmp)|![frq_n4a+1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a%2B1.bmp)|
+| $\alpha=-1$   |![frq_n1a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a-1.bmp)|![frq_n2a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a-1.bmp)|![frq_n3a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a-1.bmp)|![frq_n4a-1](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a-1.bmp)|
+| $\alpha=1.2$  |![frq_n1a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a%2B1.2.bmp)|![frq_n2a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a%2B1.2.bmp)|![frq_n3a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a%2B1.2.bmp)|![frq_n4a+1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a%2B1.2.bmp)|
+| $\alpha=-1.2$ |![frq_n1a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n1a-1.2.bmp)|![frq_n2a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n2a-1.2.bmp)|![frq_n3a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a-1.2.bmp)|![frq_n3a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n3a-1.2.bmp)|![frq_n4a-1.2](https://raw.githubusercontent.com/holdenzlL/myIHS/main/images/frq_n4a-1.2.bmp)|
 
 ### 1.2.2. Simulation with Sinmulink
 
