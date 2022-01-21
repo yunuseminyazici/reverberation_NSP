@@ -10,7 +10,10 @@
             "options": {
                 "cwd": "${workspaceFolder}/build"
             },
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "problemMatcher": {
                 "base": "$gcc",
                 "fileLocation": [
@@ -26,10 +29,7 @@
             "options": {
                 "cwd": "${workspaceFolder}/build"
             },
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "problemMatcher": {
                 "base": "$gcc",
                 "fileLocation": [

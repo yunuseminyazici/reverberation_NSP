@@ -17,7 +17,7 @@
 
 ### 1.1.1. General Specification
 
-1. Write a program that is reading a signal from the microphone or line-in input, optionally adds a reverberation (repeated echo) effect, and outputs the signal on the line-out output.
+1. Write a program that reads a signal from the microphone or line-in input, optionally adds a reverberation (repeated echo) effect, and outputs the signal on the line-out output.
 
 2. Boundary conditions for reverberation:
     a. The reverb effect occurs due to a IIR-filter with the difference equation.: $$y[k]=x[k] + αy[k-N]$$. The parameter α is the gain, while N is the delay.
